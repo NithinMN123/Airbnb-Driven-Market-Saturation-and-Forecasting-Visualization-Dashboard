@@ -1,4 +1,4 @@
-# Airbnb Market Analysis – NYC (Full Project Walkthrough)
+# Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard - NYC (Full Project Walkthrough)
 
 ## 📊 Objective
 
@@ -37,7 +37,7 @@ Airbnb-NYC-Analysis/
 │   └── spatial_queries.sql                   # SQL joins and aggregation
 ├── README.md                                 # Project documentation
 └── requirements.txt                          # Python dependencies
-└── Final Tableau Dashboard Project link      # Python dependencies
+└── Final Tableau Dashboard Project link      # Data Visualization - Tableau Dashboard
 ```
 
 ---
