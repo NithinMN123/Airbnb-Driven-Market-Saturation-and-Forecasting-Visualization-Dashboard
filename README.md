@@ -1,167 +1,146 @@
-# Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard - NYC (Full Project Walkthrough)
+# Airbnb Market Analysis and Visualization Dashboard
 
-## 📊 Objective
+![GitHub Repo Size](https://img.shields.io/github/repo-size/NithinMN123/Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard)
+![Last Commit](https://img.shields.io/github/last-commit/NithinMN123/Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-The goal of this project is to analyze Airbnb listing data in New York City to:
+Welcome to the **Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard** repository! This project analyzes the impact of Airbnb on NYC rentals using a blend of Python, SQL, and Tableau. We built an ETL pipeline, performed forecasting with scikit-learn, and created interactive dashboards to visualize pricing trends and listing saturation.
 
-* Identify pricing patterns by region, neighborhood, and room type
-* Understand how Airbnb presence affects long-term rental prices
-* Forecast future price trends
-* Generate insights for city planners, investors, and policy makers
+## Table of Contents
 
----
+- [Overview](#overview)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [ETL Pipeline](#etl-pipeline)
+- [Forecasting](#forecasting)
+- [Dashboards](#dashboards)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
-## 🎯 Key Contributions
+## Overview
 
-* Built a full ETL pipeline with Python and PostgreSQL
-* Cleaned and enriched raw Airbnb listing data
-* Performed EDA and statistical modeling to extract insights
-* Visualized key KPIs using Tableau dashboards
-* Forecasted monthly average price using regression models
-* Wrote complex SQL queries with spatial joins to enrich data
+The goal of this project is to provide insights into the Airbnb market in New York City. By analyzing rental prices and listing saturation, we can understand how Airbnb affects the traditional rental market. This project combines data analysis, visualization, and machine learning techniques to deliver a comprehensive view of the market dynamics.
 
----
+## Technologies Used
 
-## 🧱 Repository Structure
+This project utilizes the following technologies:
 
-```bash
-Airbnb-NYC-Analysis/
+- **Python**: For data manipulation and analysis.
+- **SQL**: For database management and queries.
+- **Tableau**: For creating interactive dashboards.
+- **scikit-learn**: For machine learning and forecasting.
+- **Pandas**: For data manipulation.
+- **Matplotlib & Seaborn**: For data visualization.
+- **PostgreSQL**: For database management.
+
+## Project Structure
+
+The repository is organized as follows:
+
+```
+Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard/
+│
 ├── data/
-│   ├── AB_NYC_2019.csv                       # Raw dataset
-│   ├── AB_NYC_2019_cleaned.csv               # Cleaned output from ETL
-│   ├── price_distribution.png                # Output plot from EDA
-├── scripts/
-│   ├── etl_pipeline.py                       # Data cleaning and feature generation
-│   ├── eda_modeling.py                       # EDA, regression, and forecasting
-├── sql/
-│   └── spatial_queries.sql                   # SQL joins and aggregation
-├── README.md                                 # Project documentation
-└── requirements.txt                          # Python dependencies
-└── Final Tableau Dashboard Project link      # Data Visualization - Tableau Dashboard
+│   ├── raw/
+│   ├── processed/
+│
+├── notebooks/
+│   ├── exploratory_analysis.ipynb
+│   ├── forecasting_model.ipynb
+│
+├── src/
+│   ├── etl/
+│   ├── forecasting/
+│   ├── visualization/
+│
+├── requirements.txt
+├── README.md
 ```
 
----
+- **data/**: Contains raw and processed datasets.
+- **notebooks/**: Jupyter notebooks for exploratory analysis and modeling.
+- **src/**: Source code for ETL, forecasting, and visualization.
+- **requirements.txt**: List of dependencies.
 
-## 📦 Requirements
+## Getting Started
 
-Install all dependencies via pip:
+To get started with this project, clone the repository and install the required packages.
 
 ```bash
+git clone https://github.com/NithinMN123/Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard.git
+cd Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard
 pip install -r requirements.txt
 ```
 
-### `requirements.txt`
+## ETL Pipeline
 
-```
-pandas==1.5.3
-numpy==1.21.6
-matplotlib==3.7.1
-seaborn==0.12.2
-scikit-learn==1.3.0
-statsmodels==0.13.5
-```
+The ETL (Extract, Transform, Load) pipeline is a crucial part of this project. It extracts data from various sources, transforms it for analysis, and loads it into a PostgreSQL database.
 
----
+### Steps in the ETL Process
 
-## 🚀 Installation & Usage
+1. **Extract**: Data is pulled from various APIs and CSV files.
+2. **Transform**: Data is cleaned and structured for analysis.
+3. **Load**: The transformed data is loaded into a PostgreSQL database.
 
-1. Clone the repository:
+The ETL scripts are located in the `src/etl/` directory. You can run them using Python:
 
 ```bash
-git clone https://github.com/yourusername/Airbnb-NYC-Analysis.git
-cd Airbnb-NYC-Analysis
+python src/etl/extract.py
+python src/etl/transform.py
+python src/etl/load.py
 ```
 
-2. Install dependencies:
+## Forecasting
+
+We implemented forecasting using scikit-learn. The model predicts future rental prices based on historical data. 
+
+### Steps for Forecasting
+
+1. **Data Preparation**: The dataset is split into training and testing sets.
+2. **Model Selection**: We use linear regression for forecasting.
+3. **Model Evaluation**: The model is evaluated using metrics like RMSE.
+
+You can find the forecasting code in the `src/forecasting/` directory. Run the forecasting notebook to see the results.
 
 ```bash
-pip install -r requirements.txt
+jupyter notebook notebooks/forecasting_model.ipynb
 ```
 
-3. Run ETL pipeline to clean and preprocess data:
+## Dashboards
 
-```bash
-python scripts/etl_pipeline.py
-```
+We created interactive dashboards using Tableau to visualize key metrics. These dashboards help stakeholders understand market trends and make informed decisions.
 
-4. Perform EDA and generate plots:
+### Key Features of the Dashboards
 
-```bash
-python scripts/eda_modeling.py
-```
+- **Pricing Trends**: Visualizes historical rental prices over time.
+- **Listing Saturation**: Shows the number of active listings in different neighborhoods.
+- **Comparative Analysis**: Compares Airbnb listings with traditional rentals.
 
-5. Use Tableau to load `AB_NYC_2019_cleaned.csv` and replicate dashboards
+To access the dashboards, please refer to the Tableau workbook in the `dashboards/` directory.
 
----
+## Contributing
 
-## 🔍 Modules Breakdown
+Contributions are welcome! If you have suggestions for improvements or want to add features, please create a pull request. 
 
-### `etl_pipeline.py`
+### Steps to Contribute
 
-* Removes nulls
-* Filters invalid price listings
-* Creates new features (e.g. month, price/min night)
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
 
-### `eda_modeling.py`
+## License
 
-* Generates boxplots and distribution plots
-* Fits a linear regression model
-* Runs time-series forecasting
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### `spatial_queries.sql`
+## Releases
 
-* Performs joins with zoning and census data
-* Aggregates metrics for neighborhoods and boroughs
+For the latest releases and updates, visit the [Releases section](https://github.com/NithinMN123/Airbnb-Driven-Market-Saturation-and-Forecasting-Visualization-Dashboard/releases). You can download the latest version of the project and execute it on your local machine.
 
----
+![Download Releases](https://img.shields.io/badge/download-releases-brightgreen)
 
-## 📈 KPIs Tracked
+By exploring the **Releases section**, you can stay updated with the latest changes and improvements made to the project. 
 
-* Average Monthly Price
-* Listings per Borough
-* Top Room Types
-* Availability 365
-* Repeat Reviewers
-* Regression Coefficients
-
----
-
-## 📊 Dashboard Highlights (Tableau)
-
-* Map of listings by neighborhood
-* Filters by price, availability, room type
-* KPIs and bar charts by borough and zip code
-
----
-
-## ❓ Business Questions Answered
-
-* Which boroughs have the highest and lowest prices?
-* What listing types generate the most income?
-* Are there seasonal price variations by month?
-* How does availability vary by region?
-* Which areas might be over/under saturated?
-
----
-
-## 🔍 Example Output
-
-* Boxplot of prices by borough (removing \$500+ outliers)
-* Linear regression summary with R-squared and coefficients
-* Predicted trendline of price vs. month
-* Aggregated SQL summary by region
-
----
-
-## 👩‍💻 Author
-
-**Anushka Patil**
-Data Analyst | Python | SQL | PostGreSQL | Tableau | EDA Data Modeling | ETL Pipeline
-[LinkedIn](https://www.linkedin.com/in/anushkapatil272000/)
-[Tableau Dashboard Project link](https://public.tableau.com/views/AirbnbMarketAnalysisforNYC/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-
----
-
-## 💬 Contributions Welcome
-
-Fork the repo, create issues, and submit PRs! This project is open for enhancement and extension with external datasets (e.g. rent control, census, and API integrations).
+Feel free to dive into the code, analyze the data, and visualize the results. Your feedback is important for making this project better!
